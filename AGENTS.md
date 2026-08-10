@@ -56,6 +56,13 @@ The tests must cover adding a Todo, toggling completion, and deleting a Todo. A 
 - Use a short imperative commit message, for example: `Implement Todo add flow`.
 - Before committing, review `git diff` and `git status`; after committing, confirm the commit with `git status`.
 
+## Branch workflow
+
+- Starting with Task 2, create and switch to a dedicated branch from `main` before making changes, for example: `task-2-project-init`.
+- Commit the completed Task on its task branch after verification.
+- Switch back to `main`, merge the task branch, and verify `git status` and the merge result.
+- Keep unrelated changes out of the branch and merge.
+
 ## Completion checklist
 
 - The requested behavior and matching tests are implemented.
