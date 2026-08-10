@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "test": "node --test",
+    "test": "esbuild src/App.test.tsx --bundle --platform=node --format=esm --outfile=.test-dist/App.test.js && node --test .test-dist/App.test.js",
     "lint": "tsc --noEmit",
     "build": "tsc -b && vite build",
     "dev": "vite"
