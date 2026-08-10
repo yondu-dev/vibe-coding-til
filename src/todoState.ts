@@ -17,3 +17,7 @@ export function toggleTodo(todos: Todo[], id: number): Todo[] {
 export function deleteTodo(todos: Todo[], id: number): Todo[] {
   return todos.filter((todo) => todo.id !== id)
 }
+
+export function filterTodos(todos: Todo[], showCompleted: boolean): Todo[] {
+  return showCompleted ? todos : todos.filter((todo) => !todo.completed)
+}

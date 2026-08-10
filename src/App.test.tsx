@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import type { Todo } from './types/todo'
-import { addTodo, deleteTodo, toggleTodo } from './todoState'
+import { addTodo, deleteTodo, filterTodos, toggleTodo } from './todoState'
 
 test('adds a non-empty Todo', () => {
   const todos: Todo[] = []
@@ -30,4 +30,14 @@ test('deletes a Todo', () => {
   assert.deepEqual(deleteTodo(todos, 1), [
     { id: 2, text: 'Ship it', completed: false },
   ])
+})
+
+test('hides completed Todos without deleting them', () => {
+  const todos: Todo[] = [
+    { id: 1, text: 'Done', completed: true },
+    { id: 2, text: 'Next', completed: false },
+  ]
+
+  assert.deepEqual(filterTodos(todos, false), [todos[1]])
+  assert.deepEqual(filterTodos(todos, true), todos)
 })

@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import type { Todo } from '../types/todo'
+import { filterTodos } from '../todoState'
 import { TodoItem } from './TodoItem'
 
 type TodoListProps = {
@@ -8,11 +10,23 @@ type TodoListProps = {
 }
 
 export function TodoList({ todos, onToggle, onDelete }: TodoListProps) {
+  const [showCompleted, setShowCompleted] = useState(true)
+
   return (
-    <ul>
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} onToggle={onToggle} onDelete={onDelete} />
-      ))}
-    </ul>
+    <>
+      <label>
+        <input
+          type="checkbox"
+          checked={showCompleted}
+          onChange={(event) => setShowCompleted(event.target.checked)}
+        />
+        Show completed
+      </label>
+      <ul>
+        {filterTodos(todos, showCompleted).map((todo) => (
+          <TodoItem key={todo.id} todo={todo} onToggle={onToggle} onDelete={onDelete} />
+        ))}
+      </ul>
+    </>
   )
 }
