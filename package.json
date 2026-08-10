@@ -7,13 +7,16 @@
     "test": "esbuild src/App.test.tsx --bundle --platform=node --format=esm --outfile=.test-dist/App.test.js && node --test .test-dist/App.test.js",
     "lint": "tsc --noEmit",
     "build": "tsc -b && vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "test:e2e": "playwright test",
+    "verify": "npm test && npm run lint && npm run build && npm run test:e2e"
   },
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.2",
