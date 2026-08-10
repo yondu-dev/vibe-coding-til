@@ -41,10 +41,10 @@
 - Create: `src/main.tsx`
 - Create: `src/App.tsx`
 
-- [ ] Vite의 React + TypeScript 템플릿으로 프로젝트를 초기화한다.
-- [ ] 개발 서버가 실행되고 기본 화면이 표시되는지 확인한다.
-- [ ] `package.json`에 `test`, `lint`, `build` 검증 명령을 정의한다.
-- [ ] 초기화 결과를 `git diff`로 확인한다.
+- [x] Vite의 React + TypeScript 템플릿으로 프로젝트를 초기화한다.
+- [x] 개발 서버가 실행되고 기본 화면이 표시되는지 확인한다.
+- [x] `package.json`에 `test`, `lint`, `build` 검증 명령을 정의한다.
+- [x] 초기화 결과를 `git diff`로 확인한다.
 
 ### Task 3: Todo 기본 기능 구현
 
