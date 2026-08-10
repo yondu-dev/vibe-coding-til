@@ -27,6 +27,7 @@ Use this order for every change:
 
 ## Coding rules
 
+- For every code-writing, code-modification, refactoring, bug-fix, or code-review task, use the `ponytail` skill at full intensity.
 - Prefer the simplest React and TypeScript solution that fits the current code.
 - Reuse existing helpers and patterns before introducing new ones.
 - Keep components focused and props explicit; do not create wrappers or abstractions with only one use.
